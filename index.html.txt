@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>参加意思確認アンケート</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>定年退職を迎える先輩を祝う会 参加確認</h1>
+
+    <p class="description">
+      本アンケートは社内イベント運営目的のみで使用します。<br>
+      回答内容は主催者以外には公開されません。
+    </p>
+
+    <form id="form">
+
+      <label>フルネーム（必須）</label>
+      <input type="text" id="name" placeholder="山田 太郎" required>
+
+      <label>参加について</label>
+      <div class="radio-group">
+        <label><input type="radio" name="attendance" value="参加" required> 参加</label>
+        <label><input type="radio" name="attendance" value="不参加"> 不参加</label>
+        <label><input type="radio" name="attendance" value="日程次第"> 日程次第</label>
+      </div>
+
+      <label>記念品賛同口数（1口 1,000円）</label>
+      <input type="number" id="gift" min="0" value="0">
+
+      <label>備考（おすすめのお店など）</label>
+      <textarea id="note" rows="4"></textarea>
+
+      <button type="submit">回答する</button>
+    </form>
+
+    <p id="message"></p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
