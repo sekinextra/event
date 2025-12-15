@@ -1,0 +1,55 @@
+const API_URL = ""; 
+// ↑ 後で Google Apps Script のURLをここに貼ります
+
+/* フルネーム正規化（スペース有無を区別しない） */
+function normalizeName(name) {
+  return name.replace(/\s+/g, "");
+}
+
+/* 参加者フォーム送信 */
+const form = document.getElementById("form");
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const attendance = document.querySelector(
+      'input[name="attendance"]:checked'
+    ).value;
+    const gift = document.getElementById("gift").value;
+    const note = document.getElementById("note").value;
+
+    const data = {
+      name: name,
+      nameKey: normalizeName(name),
+      attendance: attendance,
+      gift: gift,
+      note: note
+    };
+
+    await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    document.getElementById("message").textContent =
+      "回答を送信しました。同じフルネームで再送信すると内容は上書きされます。";
+
+    form.reset();
+  });
+}
+
+/* 管理者画面（※ 表示機能は次フェーズで完成させます） */
+const resetBtn = document.getElementById("resetButton");
+if (resetBtn) {
+  resetBtn.addEventListener("click", () => {
+    const msg =
+      "【最終警告】\n\nこの操作は本番データを完全に削除します。\n" +
+      "テストが終わっていることを確認してください。\n\n" +
+      "本当にリセットしますか？";
+
+    if (confirm(msg)) {
+      alert("※ リセット機能はフェーズ3で有効化されます。");
+    }
+  });
+}
