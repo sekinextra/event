@@ -1,79 +1,110 @@
+/* -------------------------
+共通スタイル
+------------------------- */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
-    "Yu Gothic", sans-serif;
-  background: #f4f6f8;
-  margin: 0;
-  padding: 0;
+font-family: 'ヒラギノ角ゴ Pro','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,sans-serif;
+background-color: #fdf6e3;
+color: #333;
+margin: 20px;
+line-height: 1.6;
 }
 
-.container {
-  max-width: 720px;
-  margin: 20px auto;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-}
-
+/* -------------------------
+ヘッダー
+------------------------- */
 h1 {
-  font-size: 1.4em;
-  margin-bottom: 10px;
+font-size: 2em;
+color: #2c3e50;
+margin-bottom: 0.2em;
 }
 
-.description {
-  font-size: 0.9em;
-  color: #555;
-  margin-bottom: 20px;
+h2 {
+font-size: 1.5em;
+color: #34495e;
+margin-top: 1.5em;
+margin-bottom: 0.5em;
 }
 
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
+/* -------------------------
+フォーム
+------------------------- */
+form label {
+display: block;
+margin-bottom: 1em;
 }
 
-input[type="text"],
-input[type="number"],
+input[type="text"], 
+input[type="number"], 
+select, 
 textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 6px;
-  box-sizing: border-box;
+width: 100%;
+max-width: 400px;
+padding: 0.5em;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+font-size: 1em;
 }
 
-.radio-group label {
-  font-weight: normal;
-  margin-right: 10px;
+textarea {
+resize: vertical;
+min-height: 60px;
 }
 
+/* -------------------------
+ボタン
+------------------------- */
 button {
-  margin-top: 20px;
-  padding: 10px 15px;
-  background: #007aff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
+background-color: #3498db;
+color: #fff;
+border: none;
+padding: 0.6em 1.2em;
+font-size: 1em;
+border-radius: 4px;
+cursor: pointer;
+transition: 0.2s;
 }
 
 button:hover {
-  opacity: 0.9;
+background-color: #2980b9;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+button:active {
+transform: scale(0.98);
 }
 
-th,
-td {
-  border: 1px solid #ccc;
-  padding: 6px;
-  text-align: left;
-  font-size: 0.9em;
+/* -------------------------
+管理者画面
+------------------------- */
+#result div {
+background-color: #f0f8ff;
+padding: 0.8em;
+margin-bottom: 0.5em;
+border-left: 4px solid #3498db;
 }
 
-.danger {
-  background: #d9534f;
+hr {
+border: none;
+border-top: 1px solid #ccc;
+margin: 1em 0;
+}
+
+/* -------------------------
+警告リセットボタン
+------------------------- */
+button[style*="color:red"] {
+background-color: #e74c3c;
+}
+
+button[style*="color:red"]:hover {
+background-color: #c0392b;
+}
+
+/* -------------------------
+レスポンシブ
+------------------------- */
+@media (max-width: 600px) {
+input[type="text"], input[type="number"], select, textarea {
+max-width: 100%;
+}
 }
