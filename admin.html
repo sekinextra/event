@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>管理者画面</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
+<meta charset="UTF-8">
+<title>管理者画面</title>
+<link rel="stylesheet" href="style.css"> </head> <body>
 
-    <h1>管理者画面</h1>
+<h1>管理者画面</h1>
 
-    <p class="description">
-      この画面は主催者専用です。<br>
-      URLを参加者に共有しないでください。
-    </p>
+<h2>イベント設定</h2>
 
-    <table id="adminTable">
-      <thead>
-        <tr>
-          <th>氏名</th>
-          <th>参加状況</th>
-          <th>記念品口数</th>
-          <th>備考</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- JavaScriptで表示 -->
-      </tbody>
-    </table>
+<label>
+タイトル<br>
+<input type="text" id="adminTitle">
+</label><br><br>
 
-    <hr>
+<label>
+主旨説明文<br>
+<textarea id="adminDescription" rows="4"></textarea> </label><br><br>
 
-    <button id="resetButton" class="danger">
-      ⚠ 全データをリセット（取り消し不可）
-    </button>
+<button onclick="saveEventSettings()">保存する</button>
 
-  </div>
+<hr>
 
-  <script src="script.js"></script>
+<h2>参加者一覧</h2>
+<div id="result"></div>
+
+<button onclick="resetAll()" style="margin-top:20px; color:red;"> ⚠️ 全回答を完全リセット
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
