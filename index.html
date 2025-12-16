@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>参加意思確認</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
+<meta charset="UTF-8">
+<title id="pageTitle">定年退職のお祝い会 出欠確認</title>
+<link rel="stylesheet" href="style.css"> </head> <body>
 
-  <h1 id="eventTitle">〇〇先輩 定年退職記念のご案内</h1>
+<h1 id="eventTitle">定年退職のお祝い会 出欠確認</h1>
+<p id="eventDescription">
+定年を迎える先輩をお祝いする会を企画しています。<br>
+参加可否と記念品へのご賛同についてご回答ください。
+</p>
 
-  <p class="description">
-    長年お世話になった〇〇先輩の定年を祝し、飲み会および記念品の贈呈を企画しております。<br>
-    本アンケートは社内イベント運営目的のみで利用し、回答内容は主催者以外には公開されません。
-  </p>
+<form id="entryForm">
+<label>
+フルネーム（必須）<br>
+<input type="text" id="name" required>
+</label><br><br>
 
-  <form id="entryForm">
+<label>
+参加状況<br>
+<select id="attendance">
+<option value="参加">参加</option>
+<option value="不参加">不参加</option>
+<option value="日程次第">日程次第</option>
+</select>
+</label><br><br>
 
-    <label>フルネーム（必須）</label>
-    <input type="text" id="name" required placeholder="例：山田 太郎">
+<label>
+記念品賛同口数（1口1,000円）<br>
+<input type="number" id="gift" min="0" value="0"> </label><br><br>
 
-    <label>飲み会への参加について</label>
-    <div class="radio-group">
-      <label><input type="radio" name="attendance" value="参加" required> 参加</label>
-      <label><input type="radio" name="attendance" value="不参加"> 不参加</label>
-      <label><input type="radio" name="attendance" value="日程次第"> 日程次第</label>
-    </div>
+<label>
+備考（おすすめのお店など）<br>
+<textarea id="memo"></textarea>
+</label><br><br>
 
-    <label>記念品へのご賛同（任意）</label>
-    <div class="inline">
-      <span>一口 1,000円</span>
-      <input type="number" id="gift" min="0" value="0">
-      <span>口</span>
-    </div>
-
-    <label>備考（おすすめのお店など）</label>
-    <textarea id="note" placeholder="おすすめのお店やご希望などがあればご記入ください"></textarea>
-
-    <button type="submit">回答する</button>
-  </form>
-
-  <p id="message"></p>
-
-</div>
+<button type="submit">送信</button>
+</form>
 
 <script src="script.js"></script>
 </body>
 </html>
+
